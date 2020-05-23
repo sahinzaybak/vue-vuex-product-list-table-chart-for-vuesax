@@ -34,7 +34,6 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 100px);
-
     &:after {
       content: "";
       position: absolute;

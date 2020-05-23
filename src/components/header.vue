@@ -1,51 +1,22 @@
 
 <template>
-    <div class="header">
-      <div class="custom-container d-flex">
-        <div class="heaer-logo">
-          <img src="../assets/images/logo.png" alt />
+  <div class="header">
+    <div class="custom-container d-flex">
+      <div class="heaer-logo">
+        <img :src="'dist/' + logo" />
+      </div>
+      <div class="header-menu w-100 d-flex">
+        <div class="header-company">
+          <img :src="'dist/' + companyLogo" />
         </div>
-        <div class="header-menu w-100 d-flex align-items-center">
-          <div class="header-item">
-            <img src="../assets/images/huawei-logo.png" alt />
-          </div>
-
-          <div class="header-item">
-            <p>Dashboard</p>
-          </div>
-          <div class="header-item active">
-            <p>Availability</p>
-          </div>
-          <div class="header-item">
-            <p>Share</p>
-          </div>
-          <div class="header-item">
-            <p>Score</p>
-          </div>
-          <div class="header-item">
-            <p>Criteria</p>
-          </div>
-          <div class="header-item">
-            <p>Trend</p>
-          </div>
-          <div class="header-item">
-            <p>Price</p>
-          </div>
-          <div class="header-item">
-            <p>Gallery</p>
-          </div>
-          <div class="header-item">
-            <p>Appeal</p>
-          </div>
-          <div class="header-item">
-            <p>Tasks</p>
-          </div>
-          <div class="header-item">
-            <p>Check-in</p>
+        <div class="header-menu__list w-100 d-flex align-items-center">
+          <div class="header-item" v-for="items in menu" :key="items.id">
+            <p>{{items.name}}</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -53,7 +24,43 @@ export default {
   name: "header-menu",
   data() {
     return {
-      loginTitle: "Gamze senş çok secitorum."
+      logo: "logo.png",
+      companyLogo: "huawei-logo.png",
+      menu: [
+        {
+          name: "Dashboard"
+        },
+        {
+          name: "Availability"
+        },
+        {
+          name: "Share"
+        },
+        {
+          name: "Score"
+        },
+        {
+          name: "Criteria"
+        },
+        {
+          name: "Trend"
+        },
+        {
+          name: "Price"
+        },
+        {
+          name: "Gallery"
+        },
+        {
+          name: "Appeal"
+        },
+        {
+          name: "Tasks"
+        },
+        {
+          name: "Check-in"
+        }
+      ]
     };
   }
 };
@@ -63,9 +70,19 @@ export default {
 .header {
   height: 120px;
   overflow: hidden;
+  &-company {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    img {
+      width: 70%;
+    }
+  }
   &-menu {
-    justify-content: space-evenly;
     padding-top: 0px;
+    &__list {
+      justify-content: space-evenly;
+    }
   }
   &-item {
     position: relative;
@@ -73,11 +90,6 @@ export default {
     display: flex;
     align-items: center;
     cursor: pointer;
-    &:first-child {
-      &:after {
-        display: none;
-      }
-    }
     &:after {
       content: "";
       position: absolute;
@@ -92,17 +104,14 @@ export default {
         width: 100%;
       }
     }
-    img {
-      width: 70%;
-    }
     p {
       font-size: 20px;
       font-weight: 500;
     }
-    &.active{
-        &:after{
-            width:100%;
-        }
+    &.active {
+      &:after {
+        width: 100%;
+      }
     }
   }
 }
