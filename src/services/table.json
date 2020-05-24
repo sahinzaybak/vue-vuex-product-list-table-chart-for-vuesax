@@ -1,0 +1,114 @@
+{
+    "data": {
+        "headers": [
+            "SalesPoint Number",
+            "City",
+            "SalesPoint Name",
+            "ResearchGroupName",
+            "Product",
+            "Availability"
+        ],
+        "rows": [
+            {
+                "auditId": 437117,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C4)",
+                "city": "İstanbul",
+                "salesPointName": "BİÇEN MAĞAZACILIK - GÜNGÖREN 6400452",
+                "salesPointNumber": "M-6400452",
+                "visitDateTime": "2019-02-01T12:51:19.367",
+                "availability": true
+            },
+            {
+                "auditId": 446015,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C4)",
+                "city": "Tokat",
+                "salesPointName": "YUNUS MARKET -TOKAT KARŞIYAKA B201012307X2-08",
+                "salesPointNumber": "M-B201012307X2-08",
+                "visitDateTime": "2019-02-01T11:47:47.53",
+                "availability": true
+            },
+            {
+                "auditId": 439408,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C4)",
+                "city": "İzmir",
+                "salesPointName": "KİM MARKET-PINARBAŞI N1020.15",
+                "salesPointNumber": "M-N1020.15",
+                "visitDateTime": "2019-02-01T11:55:22.293",
+                "availability": false
+            },
+            {
+                "auditId": 446007,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C4)",
+                "city": "Tokat",
+                "salesPointName": "TOKAT ERENLER / OUTLETT ŞUBE (ŞB8) B201018807X1-07",
+                "salesPointNumber": "M-B201018807X1-07",
+                "visitDateTime": "2019-02-01T15:14:55.833",
+                "availability": true
+            },
+            {
+                "auditId": 437383,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C4)",
+                "city": "Bursa",
+                "salesPointName": "ÖZTANER GIDA (KONAK) NML000337",
+                "salesPointNumber": "M-NML000337",
+                "visitDateTime": "2019-02-02T14:00:33.617",
+                "availability": true
+            },
+            {
+                "auditId": 437340,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C3)",
+                "city": "İzmir",
+                "salesPointName": "ÇİFTBAĞCI GIDA -PAZARYERI N0184.02",
+                "salesPointNumber": "M-N0184.02",
+                "visitDateTime": "2019-02-01T14:57:12.013",
+                "availability": true
+            },
+            {
+                "auditId": 437670,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C3)",
+                "city": "Ankara",
+                "salesPointName": "YENİ ÇAĞDAŞ TÜRKİŞ MRK025.10.54",
+                "salesPointNumber": "M-MRK025.10.54",
+                "visitDateTime": "2019-02-02T14:30:08.933",
+                "availability": true
+            },
+            {
+                "auditId": 438931,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C3)",
+                "city": "Bursa",
+                "salesPointName": "TURGUT SEYHAN (DİVAN ŞUBE) 6402947",
+                "salesPointNumber": "M-6402947",
+                "visitDateTime": "2019-02-02T10:52:32.527",
+                "availability": true
+            },
+            {
+                "auditId": 439155,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C5)",
+                "city": "Bursa",
+                "salesPointName": "ÖZTANER GIDA (ÇAMLICA ATA) NML002574",
+                "salesPointNumber": "M-NML002574",
+                "visitDateTime": "2019-02-04T09:31:54.39",
+                "availability": true
+            },
+            {
+                "auditId": 437226,
+                "productName": " BEBELAC  ŞEFTALİ ELMA PÜRESİ",
+                "researchGroupName": "Ürün Bulunurluk Araştırması (DO-C5)",
+                "city": "İstanbul",
+                "salesPointName": "ŞAFAK GIDA VE DAY.TÜK.MAD.SAN. VE TİC.A.Ş-BAĞCLAR1 6403354",
+                "salesPointNumber": "M-6403354",
+                "visitDateTime": "2019-02-02T11:02:04.887",
+                "availability": true
+            }
+        ]
+    }
+}

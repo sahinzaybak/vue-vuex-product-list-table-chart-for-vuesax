@@ -7,9 +7,9 @@
           <img src="../assets/images/logo.png" alt />
         </div>
       </div>
-
+      <!-- login comp. -->
       <loginForm />
-      
+      <!-- login comp -->
     </div>
   </div>
 </template>

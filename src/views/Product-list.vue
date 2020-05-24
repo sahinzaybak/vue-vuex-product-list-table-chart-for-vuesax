@@ -1,25 +1,64 @@
-
 <template>
   <div class="product">
+    <!-- header comp.-->
     <headerMenu />
+    <!-- header comp.-->
     <div class="product-wrp">
       <div class="custom-container">
-        <div class="product-title d-flex align-items-center">{{title}}</div>
-        <tables />
+        <div class="product-top d-flex align-items-center justify-content-between">
+          <div class="product-top__left d-flex align-items-center">
+            <div
+              class="product-top__item d-flex align-items-center"
+              v-for="item in productTop"
+              :key="item.id"
+            >
+              <p>{{item.name}}</p>
+              <span>{{item.value}}</span>
+            </div>
+          </div>
+          <div class="product-top__right">
+            <search />
+          </div>
+        </div>
       </div>
+      <div class="product-title d-flex align-items-center">
+        <div class="custom-container">{{title}}</div>
+      </div>
+
+      <!-- table comp.-->
+      <div class="custom-container">
+        <tables :active=active />
+      </div>
+      <!-- table comp.-->
     </div>
   </div>
 </template>
 
 <script>
 import headerMenu from "../components/header";
+import search from "../components/search";
 import tables from "../components/table";
 export default {
+  components: { headerMenu, tables, search },
   name: "product-list",
-  components: { headerMenu, tables },
   data() {
     return {
-      title: "Competitor Comparative Product Availability"
+      title: "Competitor Comparative Product Availability",
+      active:'Table',
+      productTop: [
+        {
+          name: "Dates",
+          value: "01-31 Jul 2018"
+        },
+        {
+          name: "Project",
+          value: "All"
+        },
+        {
+          name: "Channel",
+          value: "All"
+        }
+      ]
     };
   }
 };
@@ -53,6 +92,21 @@ export default {
     font-size: 28px;
     color: white;
     padding: 40px;
+  }
+  &-top {
+    color: white;
+    padding: 16px 0;
+    &__item {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      margin-right: 23px;
+      span {
+        background-color: rgba(45, 60, 90, 0.78);
+        padding: 3px 13px;
+        border-radius: 4px;
+        margin-left: 9px;
+      }
+    }
   }
 }
 </style>

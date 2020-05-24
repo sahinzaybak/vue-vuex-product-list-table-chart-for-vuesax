@@ -51,11 +51,6 @@ export default {
 
 <style lang="scss" scope>
 .login {
-  background-image: url("../assets/images/login-bg.png");
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
   &-wrp {
     max-width: 52%;
     width: 100%;
