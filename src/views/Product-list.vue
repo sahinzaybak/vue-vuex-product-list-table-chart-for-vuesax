@@ -1,8 +1,8 @@
 <template>
   <div class="product">
-    <!-- header comp.-->
+    <!-- header component begin-->
     <headerMenu />
-    <!-- header comp.-->
+    <!-- header component end-->
     <div class="product-wrp">
       <div class="custom-container">
         <div class="product-top d-flex align-items-center justify-content-between">
@@ -25,11 +25,11 @@
         <div class="custom-container">{{title}}</div>
       </div>
 
-      <!-- table comp.-->
+      <!-- table component begin-->
       <div class="custom-container">
         <tables :active=active />
       </div>
-      <!-- table comp.-->
+      <!-- table component end-->
     </div>
   </div>
 </template>

@@ -6,6 +6,8 @@
           <img src="../assets/images/download-ico.png" alt />
           <p>Download</p>
         </a>
+
+        <!-- Tree, Map, Chart, Table, List alanı begin -->
         <div class="table-filter d-flex">
           <router-link
             to="#"
@@ -19,17 +21,37 @@
           </router-link>
         </div>
       </div>
+      <!-- Tree, Map, Chart, Table, List alanı end -->
+
+      <!--Tabloada arama alanı begin-->
+      <b-input-group size="sm">
+        <b-form-input
+          v-model="filter"
+          type="search"
+          id="filterInput"
+          placeholder="Herhangi bir veriyi tabloda arayabilirsiniz.."
+        ></b-form-input>
+
+        <b-input-group-append>
+          <b-button :disabled="!filter" @click="filter = ''">Temizle</b-button>
+        </b-input-group-append>
+      </b-input-group>
+      <!--Tabloada arama alanı end-->
 
       <div class="table-container">
-        <!--tablo  -->
+        <!--tablo begin  -->
         <b-table
           id="my-table"
-          :fields="fields"
-          :items="items"
+          hover
+          :filter="filter"
+          :filterIncludedFields="filterOn"
+          @filtered="onFiltered"
+          :items="tableRow"
           :per-page="perPage"
           :current-page="currentPage"
           small
         ></b-table>
+        <!--tablo end  -->
 
         <!-- sayfalama -->
         <vs-pagination not-margin :color="colorx" v-model="currentPage" :length="2" />
@@ -62,19 +84,8 @@ export default {
     colorx: "#ee337c",
     perPage: 5,
     currentPage: 1,
-    fields: ["first_name", "last_name", "age", "a", "b", "c"],
-    items: [
-      { age: 40, first_name: "Dickerson", last_name: "Macdonald" },
-      { age: 21, first_name: "Larsen", last_name: "Shaw" },
-      { age: 89, first_name: "Geneva", last_name: "Wilson" },
-      { age: 38, first_name: "Jami", last_name: "Carney" },
-      { age: 40, first_name: "Dickerson", last_name: "Macdonald" },
-      { age: 21, first_name: "Larsen", last_name: "Shaw" },
-      { age: 89, first_name: "Geneva", last_name: "Wilson" },
-      { age: 38, first_name: "Jami", last_name: "Carney" },
-      { age: 40, first_name: "Dickerson", last_name: "Macdonald" },
-      { age: 21, first_name: "Larsen", last_name: "Shaw" }
-    ],
+    filter: null,
+    filterOn: [],
     filters: [
       {
         name: "Tree",
@@ -111,14 +122,20 @@ export default {
     rows() {
       return this.items.length;
     },
+    ...mapState(["tableRow"]),
     ...mapActions(["fetchTableList"])
+  },
+  methods: {
+    onFiltered(filteredItems) {
+      this.totalRows = filteredItems.length;
+      this.currentPage = 1;
+    }
   }
 };
 </script>
 
 <style lang="scss" scope>
 .table {
-  text-align: center;
   &-wrp {
     background-color: rgba(255, 255, 255, 0.79);
     padding-bottom: 50px;
@@ -132,13 +149,13 @@ export default {
     div {
       color: #5b5b5b;
       font-weight: 600;
-      font-size: 15px;
+      font-size: 17px;
     }
   }
   td {
     padding: 0.55rem;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     color: #757575;
   }
   &-top {
@@ -209,6 +226,37 @@ export default {
     }
     &__active {
       border-radius: 7px;
+    }
+  }
+  .input-group {
+    button {
+      height: 57px !important;
+      background-color: #ee337c;
+      border: 0;
+      opacity: 0.8;
+      transition: all 0.3s;
+      padding: 16px !important;
+      font-size: 16px !important;
+      letter-spacing: 0.6px;
+      font-weight: 600;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &-append {
+      margin-left: 0px;
+    }
+  }
+  #filterInput {
+    height: 56px;
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    &:focus {
+      box-shadow: none;
+      border-radius: 4px;
     }
   }
 }
