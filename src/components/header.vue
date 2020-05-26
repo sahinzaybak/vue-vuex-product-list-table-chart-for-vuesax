@@ -1,16 +1,13 @@
-
 <template>
   <div class="header">
     <div class="custom-container d-flex">
-      <div class="heaer-logo">
-        <img :src="'dist/' + logo" />
-      </div>
+      <router-link to="/" class="heaer-logo"><img :src="'dist/' + logo" /></router-link>
       <div class="header-menu w-100 d-flex">
         <div class="header-company">
           <img src="../assets/images/huawei-logo.png" />
         </div>
         <div class="header-menu__list pl-5 w-100 d-flex align-items-center">
-          <div class="header-item" v-for="items in menu" :key="items.id">
+          <div class="header-item" v-for="items in menu" :key="items.id" :class="{ 'active' : items.name == active}"> 
             <p>{{items.name}}</p>
           </div>
         </div>
@@ -31,51 +28,50 @@
 <script>
 export default {
   name: "header-menu",
-  data() {
-    return {
-      logo: "logo.png",
-      companyLogo: "huawei-logo.png",
-      menu: [
-        {
-          name: "Dashboard"
-        },
-        {
-          name: "Availability"
-        },
-        {
-          name: "Share"
-        },
-        {
-          name: "Score"
-        },
-        {
-          name: "Criteria"
-        },
-        {
-          name: "Trend"
-        },
-        {
-          name: "Price"
-        },
-        {
-          name: "Gallery"
-        },
-        {
-          name: "Appeal"
-        },
-        {
-          name: "Tasks"
-        },
-        {
-          name: "Check-in"
-        }
-      ]
-    };
-  }
+  data: () => ({
+    logo: "logo.png",
+    active:'Availability',
+    companyLogo: "huawei-logo.png",
+    menu: [
+      {
+        name: "Dashboard"
+      },
+      {
+        name: "Availability"
+      },
+      {
+        name: "Share"
+      },
+      {
+        name: "Score"
+      },
+      {
+        name: "Criteria"
+      },
+      {
+        name: "Trend"
+      },
+      {
+        name: "Price"
+      },
+      {
+        name: "Gallery"
+      },
+      {
+        name: "Appeal"
+      },
+      {
+        name: "Tasks"
+      },
+      {
+        name: "Check-in"
+      }
+    ]
+  })
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss">
 .header {
   &-company {
     display: flex;
@@ -118,11 +114,11 @@ export default {
         width: 100%;
       }
     }
-    &:nth-child(10){
-        color:#3b6ff4;
+    &:nth-child(10) {
+      color: #3b6ff4;
     }
-    &:nth-child(11){
-        color:#f43bcb;
+    &:nth-child(11) {
+      color: #f43bcb;
     }
   }
   &-user {
@@ -138,9 +134,9 @@ export default {
         font-weight: 700;
         letter-spacing: 0.4px;
       }
-      span{
-          font-size: 14px;
-          color:#c4c4c4;
+      span {
+        font-size: 14px;
+        color: #c4c4c4;
       }
     }
   }

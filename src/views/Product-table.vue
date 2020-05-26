@@ -6,19 +6,9 @@
     <div class="product-wrp">
       <div class="custom-container">
         <div class="product-top d-flex align-items-center justify-content-between">
-          <div class="product-top__left d-flex align-items-center">
-            <div
-              class="product-top__item d-flex align-items-center"
-              v-for="item in productTop"
-              :key="item.id"
-            >
-              <p>{{item.name}}</p>
-              <span>{{item.value}}</span>
-            </div>
-          </div>
-          <div class="product-top__right">
-            <search />
-          </div>
+          <!-- Dates,Project, Channel and search component begin-->
+          <product-info />
+          <!-- Dates,Project, Channel and search component end-->
         </div>
       </div>
       <div class="product-title d-flex align-items-center">
@@ -27,7 +17,7 @@
 
       <!-- table component begin-->
       <div class="custom-container">
-        <tables :active=active />
+        <tables />
       </div>
       <!-- table component end-->
     </div>
@@ -36,35 +26,18 @@
 
 <script>
 import headerMenu from "../components/header";
-import search from "../components/search";
 import tables from "../components/table";
+import productInfo from "../components/product-info";
 export default {
-  components: { headerMenu, tables, search },
-  name: "product-list",
-  data() {
-    return {
-      title: "Competitor Comparative Product Availability",
-      active:'Table',
-      productTop: [
-        {
-          name: "Dates",
-          value: "01-31 Jul 2018"
-        },
-        {
-          name: "Project",
-          value: "All"
-        },
-        {
-          name: "Channel",
-          value: "All"
-        }
-      ]
-    };
-  }
+  components: { headerMenu, tables, productInfo },
+  name: "product-table",
+  data: () => ({
+    title: "Competitor Comparative Product Availability",
+  })
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss">
 .product {
   &-wrp {
     position: relative;
@@ -92,20 +65,9 @@ export default {
     font-size: 28px;
     color: white;
     padding: 40px;
-  }
-  &-top {
-    color: white;
-    padding: 16px 0;
-    &__item {
-      font-size: 12px;
-      letter-spacing: 0.4px;
-      margin-right: 23px;
-      span {
-        background-color: rgba(45, 60, 90, 0.78);
-        padding: 3px 13px;
-        border-radius: 4px;
-        margin-left: 9px;
-      }
+    @media (max-width: 1440px){
+        height: 80px;
+        font-size: 22px;
     }
   }
 }

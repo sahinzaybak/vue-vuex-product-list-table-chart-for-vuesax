@@ -4,16 +4,15 @@ import Vuex from 'vuex'
 import router from './router'
 import storeOptions from './store/store'
 import {BootstrapVue,BootstrapVueIcons } from 'bootstrap-vue'
-// import vWow from 'v-wow'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css' //Vuesax styles
+// import vWow from 'v-wow'
 
+Vue.use(Vuex)
 Vue.use(Vuesax)
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 // Vue.use(vWow);
-Vue.use(Vuex)
-
 const store = new Vuex.Store(storeOptions);
 
 new Vue({
@@ -21,3 +20,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+

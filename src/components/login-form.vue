@@ -1,55 +1,51 @@
 
 <template>
   <div class="login-wrp">
-    <h2
-      class="login-title"
-      v-wow="{ 'animation-name': 'fadeIn','animation-duration': '2s'}"
-      v-html="loginTitle"
-    ></h2>
+    <h2 class="login-title" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '2s'}" v-html="loginTitle"></h2>
     <div class="login-area">
+      <p class="login-error" :class="{ 'error' : isActive == true}" >{{loginError}}</p>
       <div class="login-area__input d-flex">
-        <div
-          class="login-item"
-          v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.2s'}"
-        >
+        <div class="login-item" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.2s'}">
           <p>Email</p>
-          <input type="text" placeholder="Please enter your email" />
+          <input v-model="email" type="text" placeholder="Please enter your email" />
         </div>
-        <div
-          class="login-item"
-          v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.3s'}"
-        >
+        <div class="login-item" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.3s'}">
           <p>Password</p>
-          <input type="text" placeholder="Please enter your password" />
+          <input v-model="password" type="password" placeholder="Please enter your password" />
         </div>
       </div>
       <div class="login-link d-flex align-items-center justify-content-end">
-        <a
-          href="#"
-          v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.4s'}"
-        >Forget Password?</a>
-        <router-link
-          :to="{path : 'product-list'}"
-          class="button d-block ml-5"
-          v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.5s'}"
-        >Login</router-link>
+        <a href="#" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.4s'}">Forget Password?</a>
+        <a class="button d-block ml-5" @click="login" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.5s'}"
+        >Login</a>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
   name: "login-form",
   data() {
     return {
-      loginTitle: "Welcome to <br> <span>rem</span>in Store <br> BI tool."
+      loginTitle: "Welcome to <br> <span>rem</span>in Store <br> BI tool.",
+      loginError: 'Please fill in all fields ! ',
+      email:'',
+      password: '',
+      isActive:false
     };
+  },
+  methods:{
+      login(){
+        if(this.email != "" && this.password != "null") this.$router.push('/product-chart');
+        else this.isActive=true
+      }
   }
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss">
 .login {
   &-wrp {
     max-width: 52%;
@@ -112,11 +108,13 @@ export default {
   }
   &-link {
     margin-top: 55px;
+    color: #ee337c;
     a {
       color: #818181;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.2px;
+       cursor: pointer;
       &:hover {
         color: rgb(238, 51, 124);
       }
@@ -136,9 +134,20 @@ export default {
       box-shadow: #ee337c 1px 1px 21px -5px;
       &:hover {
         background-color: rgb(238, 51, 124);
-        color: white;
+        color: white !important;
       }
     }
   }
+  &-error{
+      opacity: 0;
+      transition: all 0.3s;
+      font-size: 17px;
+      color: #ee337c;
+      position: relative;
+      top: -20px;
+        &.error{
+            opacity: 1;
+        }
+    }
 }
 </style>

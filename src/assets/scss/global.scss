@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100,200,300;400;500,600&display=swap');
+
 
 * {
   &,
@@ -108,15 +108,14 @@ img {
   color: #444444;
 }
 
-
 //Sayfa geçişi için efekt
 .fade-enter-active {
-  transition: all .25s ease-in-out;
-  transition-delay: .25s;
+  transition: all .35s ease-in-out;
+  transition-delay: .35s;
 }
       
 .fade-leave-active {
-  transition: all .25s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 
 .fade-enter {
@@ -126,3 +125,81 @@ img {
 .fade-leave-to {
   opacity: 0;
 }
+
+
+.table {
+    text-align: center;
+  &-wrp {
+    background-color: rgba(255, 255, 255, 0.79);
+    padding-bottom: 50px;
+    padding: 25px 40px;
+    padding-bottom: 35px;
+  }
+  th {
+    background-color: #efefef;
+    border-bottom: 0;
+    padding: 0.75rem;
+    div {
+      color: #5b5b5b;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  td {
+    padding: 0.55rem;
+    font-size: 15px;
+    font-weight: 400;
+    color: #757575;
+    @media (max-width: 1440px){
+       font-size: 14px;
+    }
+  }
+  &-container {
+    background-color: white;
+    padding-bottom: 30px;
+    border-radius: 4px;
+  }
+  .vs-pagination {
+    &__button {
+      font-weight: 600;
+    }
+    &__active {
+      border-radius: 7px;
+    }
+  }
+  .input-group {
+    button {
+      height: 57px !important;
+      background-color: #ee337c;
+      border: 0;
+      opacity: 0.8;
+      transition: all 0.3s;
+      padding: 16px !important;
+      font-size: 16px !important;
+      letter-spacing: 0.6px;
+      font-weight: 600;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &-append {
+      margin-left: 0px;
+    }
+  }
+  #filterInput {
+    height: 56px;
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    font-size: 17px;
+    text-indent: 10px;
+    &:focus {
+      box-shadow: none;
+      border-radius: 4px;
+    }
+  }
+  
+}
+
