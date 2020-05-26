@@ -14,7 +14,6 @@ export default new Router({
             }, 300)
         })
     },
-    base: process.env.BASE_URL,
     routes: [
         {
             path: '/',

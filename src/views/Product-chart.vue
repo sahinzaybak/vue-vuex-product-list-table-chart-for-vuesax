@@ -12,11 +12,11 @@
         </div>
       </div>
       <div class="product-title d-flex align-items-center">
-        <div class="custom-container">{{title}}</div>
+        <div class="custom-container" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.2s'}">{{title}}</div>
       </div>
       <!-- chart begin-->
       <div class="custom-container">
-        <chart />
+        <chart v-wow="{ 'animation-name': 'fadeIn','animation-duration': '1s' , 'animation-delay' : '0.4s'}"/>
       </div>
       <!-- chart end-->
     </div>
@@ -65,6 +65,10 @@ export default {
     font-size: 28px;
     color: white;
     padding: 40px;
+      @media (max-width: 1440px){
+        height: 80px;
+        font-size: 22px;
+    }
   }
 }
 </style>

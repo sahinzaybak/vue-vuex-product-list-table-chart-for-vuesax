@@ -8,9 +8,7 @@
   </div>
 </template>
 
-
 <script>
-import { mapGetters, mapState, mapActions } from "vuex";
 export default {
   name: "app",
   data() {

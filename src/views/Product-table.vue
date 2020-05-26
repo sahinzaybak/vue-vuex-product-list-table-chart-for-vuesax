@@ -12,12 +12,11 @@
         </div>
       </div>
       <div class="product-title d-flex align-items-center">
-        <div class="custom-container">{{title}}</div>
+        <div class="custom-container" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.2s'}">{{title}}</div>
       </div>
-
       <!-- table component begin-->
       <div class="custom-container">
-        <tables />
+        <tables v-wow="{ 'animation-name': 'fadeIn','animation-duration': '1.5s' , 'animation-delay' : '0.4s'}"/>
       </div>
       <!-- table component end-->
     </div>

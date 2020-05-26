@@ -5,14 +5,14 @@ import router from './router'
 import storeOptions from './store/store'
 import {BootstrapVue,BootstrapVueIcons } from 'bootstrap-vue'
 import Vuesax from 'vuesax'
+import vWow from 'v-wow'
 import 'vuesax/dist/vuesax.css' //Vuesax styles
-// import vWow from 'v-wow'
 
 Vue.use(Vuex)
 Vue.use(Vuesax)
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
-// Vue.use(vWow);
+Vue.use(vWow);
 const store = new Vuex.Store(storeOptions);
 
 new Vue({

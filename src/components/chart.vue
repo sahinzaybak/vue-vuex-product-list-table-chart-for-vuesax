@@ -5,7 +5,9 @@
         <a href="#"></a>
         <choose-view :active="active" />
       </div>
+      <!--Highcharts begin -->
       <vue-highcharts :highcharts="Highcharts" :options="drilldownOptions" ref="drilldownChart">></vue-highcharts>
+      <!--Highcharts end -->
     </div>
   </div>
 </template>
@@ -16,10 +18,11 @@ import VueHighcharts from "vue2-highcharts";
 import Drilldown from "highcharts/modules/drilldown.js";
 import Highcharts from "highcharts";
 import chooseView from "./choose-view";
+
 Drilldown(Highcharts);
 Highcharts.setOptions({
   lang: {
-    drillUpText: "Geri Dön"
+    drillUpText: "Back"
   }
 });
 
@@ -34,7 +37,7 @@ export default {
     this.fetchChartData;
   },
   computed: {
-    ...mapState(["drilldownSeries", "series"]), // hem ürünleri ve ürün detay bilgilerini state'ten aldık.
+    ...mapState(["drilldownSeries", "series"]), // ürünleri ve ürün detay bilgilerini state'ten aldım.
     ...mapActions(["fetchChartData"]),
 
     drilldownOptions() {
@@ -69,12 +72,12 @@ export default {
           {
             name: "Ürünler",
             colorByPoint: true,
-            data: this.series // State'ten çektiğimiz ürünleri "series" alanında bastırdık.
+            data: this.series // State'ten çektiğim ürünleri "series" alanında bastırdım.
           }
         ],
 
         drilldown: {
-          series: this.drilldownSeries // State'ten çektiğimiz üürn detay bilgilerini "drilldown" alanında bastırdık.
+          series: this.drilldownSeries // State'ten çektiğim ürün detay bilgilerini "drilldown" alanında bastırdım.
         }
       };
     }

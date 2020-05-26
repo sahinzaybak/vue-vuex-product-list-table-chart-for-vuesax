@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <div class="custom-container d-flex">
-      <router-link to="/" class="heaer-logo"><img :src="'dist/' + logo" /></router-link>
+      <router-link to="/" class="heaer-logo" v-wow="{ 'animation-name': 'fadeInDown','animation-duration': '1s' , 'animation-delay' : '0.2s'}"><img :src="'dist/' + logo" /></router-link>
       <div class="header-menu w-100 d-flex">
-        <div class="header-company">
+        <div class="header-company" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '2s' , 'animation-delay' : '0.4s'}">
           <img src="../assets/images/huawei-logo.png" />
         </div>
         <div class="header-menu__list pl-5 w-100 d-flex align-items-center">

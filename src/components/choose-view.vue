@@ -1,6 +1,6 @@
 <template>
   <div class="table-filter d-flex">
-    <router-link :to="{path : items.url}" v-for="items in filters" :key="items.id" :class="{'active' : items.name == active}" class="table-filter__item d-flex align-items-center">
+    <router-link :to="{path : items.url}" v-for="items in filters" :key="items.id" :class="{'active' : items.name == active}" class="table-filter__item d-flex align-items-center" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.4s'}">
       <b-icon :icon="items.icon" />
       <p>{{items.name}}</p>
     </router-link>

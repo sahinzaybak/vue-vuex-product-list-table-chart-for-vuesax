@@ -3,8 +3,8 @@ import axios from "axios";
 const tableList = async () => {
     try {
         const response = await axios.get('table.json')
-        const data = await Object.values(response.data);
-        return data;
+        const result = await Object.values(response.data);
+        return result;
     }
     catch (error) { console.log("API'den veri çekilirken bir hata oluştu! Lütfen kontrol ediniz..") }
 }

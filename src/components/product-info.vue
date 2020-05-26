@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex justify-content-between w-100">
+<div class="d-flex justify-content-between w-100" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '2s' , 'animation-delay' : '0.4s'}">
   <div class="product-top__left d-flex align-items-center">
     <div class="product-top__item d-flex align-items-center" v-for="item in productTop" :key="item.id">
       <p>{{item.name}}</p>
@@ -21,9 +21,8 @@
 import { BIconSearch } from "bootstrap-vue";
 export default {
   name: "product-table",
-components: { BIconSearch},
-  data() {
-    return {
+  components: { BIconSearch},
+  data: () => ({
       title: "Competitor Comparative Product Availability",
       productTop: [
         {
@@ -39,8 +38,7 @@ components: { BIconSearch},
           value: "All"
         }
       ]
-    };
-  }
+    })
 };
 </script>
 

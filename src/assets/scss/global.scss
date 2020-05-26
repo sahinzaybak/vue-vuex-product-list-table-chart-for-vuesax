@@ -108,25 +108,6 @@ img {
   color: #444444;
 }
 
-//Sayfa geçişi için efekt
-.fade-enter-active {
-  transition: all .35s ease-in-out;
-  transition-delay: .35s;
-}
-      
-.fade-leave-active {
-  transition: all .35s ease-in-out;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-leave-to {
-  opacity: 0;
-}
-
-
 .table {
     text-align: center;
   &-wrp {
@@ -202,4 +183,5 @@ img {
   }
   
 }
+
 

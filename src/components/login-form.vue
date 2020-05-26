@@ -7,11 +7,11 @@
       <div class="login-area__input d-flex">
         <div class="login-item" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.2s'}">
           <p>Email</p>
-          <input v-model="email" type="text" placeholder="Please enter your email" />
+          <input v-model="email" @keyup.enter="login" type="text" placeholder="Please enter your email" />
         </div>
         <div class="login-item" v-wow="{ 'animation-name': 'fadeInUp','animation-duration': '1s' , 'animation-delay' : '0.3s'}">
           <p>Password</p>
-          <input v-model="password" type="password" placeholder="Please enter your password" />
+          <input v-model="password" @keyup.enter="login" type="password" placeholder="Please enter your password" />
         </div>
       </div>
       <div class="login-link d-flex align-items-center justify-content-end">
@@ -23,22 +23,19 @@
   </div>
 </template>
 
-
 <script>
 export default {
   name: "login-form",
-  data() {
-    return {
+  data: () => ({
       loginTitle: "Welcome to <br> <span>rem</span>in Store <br> BI tool.",
       loginError: 'Please fill in all fields ! ',
       email:'',
       password: '',
       isActive:false
-    };
-  },
+    }),
   methods:{
       login(){
-        if(this.email != "" && this.password != "null") this.$router.push('/product-chart');
+        if(this.email != "" && this.password != "") this.$router.push('/product-chart');
         else this.isActive=true
       }
   }
