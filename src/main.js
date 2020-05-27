@@ -6,7 +6,7 @@ import storeOptions from './store/store'
 import {BootstrapVue,BootstrapVueIcons } from 'bootstrap-vue'
 import Vuesax from 'vuesax'
 import vWow from 'v-wow'
-import 'vuesax/dist/vuesax.css' //Vuesax styles
+import 'vuesax/dist/vuesax.css'
 
 Vue.use(Vuex)
 Vue.use(Vuesax)

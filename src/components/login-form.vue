@@ -33,11 +33,12 @@ export default {
       password: '',
       isActive:false
     }),
+    
   methods:{
       login(){
         if(this.email != "" && this.password != "") this.$router.push('/product-chart');
         else this.isActive=true
-      }
+    }
   }
 };
 </script>
