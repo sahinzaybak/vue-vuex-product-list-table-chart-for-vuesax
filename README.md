@@ -1,4 +1,4 @@
-Vue/Vuex Product list table and chart system forvuesax
+Vue/Vuex Product list table and chart system for Vuesax
 
 ## Build Setup
 
