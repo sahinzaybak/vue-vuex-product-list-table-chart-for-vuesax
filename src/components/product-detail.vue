@@ -13,11 +13,11 @@
 
     <!-- table and chart begin-->
     <div class="custom-container">
-      <tables v-if="page=='table'" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '1.5s' , 'animation-delay' : '0.4s'}"/>
-      <chart v-if="page=='chart'" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '1s' , 'animation-delay' : '0.4s'}"/>
+      <tables v-if="page=='table'" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '1.1s' , 'animation-delay' : '0.2s'}"/>
+      <chart v-if="page=='chart'" v-wow="{ 'animation-name': 'fadeIn','animation-duration': '1s' , 'animation-delay' : '0.1s'}"/>
     </div>
     <!-- table and chart end-->
-    
+
   </div>
 </template>
 
