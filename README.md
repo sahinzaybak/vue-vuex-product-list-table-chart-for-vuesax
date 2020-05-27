@@ -1,5 +1,9 @@
 Vue/Vuex Product list table and chart system for Vuesax
 
+Vue/Vuex ile yapmış olduğum ürün detay listeleme ve ürün detay bilgilerini drilldown chart  sisteminde sistematik olarak gösterme.
+Chart sistem için : https://www.highcharts.com/
+
+
 ## Build Setup
 
 ``` bash
