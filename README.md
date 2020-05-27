@@ -1,6 +1,6 @@
 # Vue/Vuex Product list table and chart system for Vuesax
 
-Vue/Vuex ile yapmış olduğum ürün detay listeleme ve ürün detay bilgilerini drilldown chart  sisteminde sistematik olarak gösterme.
+Vue/Vuex ile yapmış olduğum chart ve table sistemi. API'den gelen verilerle ürün detay tablosunu doldurduğum, tablo içerisinde arama yapılabilen ve ürün detay bilgilerini drilldown chart  sisteminde sistematik olarak gösteren bir uygulama.
 Chart sistem için : https://www.highcharts.com/
 
 
