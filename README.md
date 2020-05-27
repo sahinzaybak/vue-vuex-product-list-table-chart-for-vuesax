@@ -1,6 +1,4 @@
-# rem-people
-
-> rem people task
+Vue/Vuex Product list table and chart system forvuesax
 
 ## Build Setup
 
