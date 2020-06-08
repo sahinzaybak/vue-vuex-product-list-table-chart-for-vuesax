@@ -1,6 +1,8 @@
-# rem-people
+# Vue/Vuex Product list table and chart system for Vuesax
 
-> rem people task
+Vue/Vuex ile yapmış olduğum chart ve table sistemi. API'den gelen verilerle ürün detay tablosunu doldurduğum, tablo içerisinde arama yapılabilen ve ürün detay bilgilerini drilldown chart  sisteminde sistematik olarak gösteren bir uygulama.
+Chart sistem için : https://www.highcharts.com/
+
 
 ## Build Setup
 
@@ -16,3 +18,10 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+<br>
+<div align="center">
+  <img src="https://image.flaticon.com/teams/slug/smashicons.jpg" width="80">
+  <h3><i>Developer by Şahin ZAYBAK </i></h3>
+  <hr/>
+</div>
